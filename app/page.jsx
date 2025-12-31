@@ -25,6 +25,7 @@ const BilibiliIcon = ({ className }) => (
 )
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false)
   const [url, setUrl] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -33,6 +34,10 @@ export default function Home() {
   const [downloading, setDownloading] = useState(null)
   const [showPreview, setShowPreview] = useState(null)
   const [focused, setFocused] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -137,39 +142,39 @@ export default function Home() {
   const audioLinks = videoInfo?.downloadLinks?.filter(l => l.type === 'audio') || []
 
   return (
-    <div className="min-h-screen flex flex-col bg-off-white text-ink-900 font-sans selection:bg-primary-100 selection:text-primary-900">
+    <div className={`min-h-screen flex flex-col bg-off-white text-ink-900 font-sans selection:bg-primary-100 selection:text-primary-900 ${mounted ? 'transition-opacity duration-300' : ''}`}>
       {/* Main Content */}
       <main className="flex-1 flex flex-col p-6 sm:p-8 lg:p-12">
         <div className="flex-1 flex flex-col max-w-2xl mx-auto w-full">
 
           {/* Unifed Header/Hero Section */}
           <div className={`
-            flex flex-col transition-all duration-700 ease-silky will-change-transform
+            flex flex-col ${mounted ? 'transition-all duration-700 ease-silky' : ''} will-change-transform
             ${videoInfo || loading ? 'mb-8' : 'flex-1 justify-center -mt-20'}
           `}>
             <div className={`
-              flex transition-all duration-700 ease-silky
+              flex ${mounted ? 'transition-all duration-700 ease-silky' : ''}
               ${videoInfo || loading ? 'flex-row items-center gap-3' : 'flex-col items-center'}
             `}>
               <div className={`
-                transition-all duration-700 ease-silky
+                ${mounted ? 'transition-all duration-700 ease-silky' : ''}
                 ${videoInfo || loading ? 'w-10 h-10' : 'w-24 h-24 mb-8'}
               `}>
                 <BilibiliIcon className="w-full h-full text-primary-500" />
               </div>
 
               <div className={`
-                transition-all duration-700 ease-silky
+                ${mounted ? 'transition-all duration-700 ease-silky' : ''}
                 ${videoInfo || loading ? '' : 'text-center'}
               `}>
                 <h1 className={`
-                  font-bold text-ink-900 transition-all duration-700 ease-silky
+                  font-bold text-ink-900 ${mounted ? 'transition-all duration-700 ease-silky' : ''}
                   ${videoInfo || loading ? 'text-lg' : 'text-3xl mb-3'}
                 `}>
                   Bilibili Downloader
                 </h1>
                 <p className={`
-                  text-ink-500 transition-all duration-500 ease-in-out
+                  text-ink-500 ${mounted ? 'transition-all duration-500 ease-in-out' : ''}
                   ${videoInfo || loading ? 'text-xs font-medium' : 'text-lg'}
                 `}>
                   Simple and pure Bilibili video downloader
@@ -179,7 +184,7 @@ export default function Home() {
           </div>
 
           {/* Search Form - Floating Style */}
-          <form onSubmit={handleSubmit} className={`relative z-10 transition-all duration-700 ease-silky will-change-transform ${!(videoInfo || loading) ? 'w-full max-w-xl mx-auto' : ''}`}>
+          <form onSubmit={handleSubmit} className={`relative z-10 ${mounted ? 'transition-all duration-700 ease-silky' : ''} will-change-transform ${!(videoInfo || loading) ? 'w-full max-w-xl mx-auto' : ''}`}>
             <div className="flex flex-col md:flex-row items-stretch gap-3 md:gap-0">
               <div className={`
                 flex-1 relative overflow-hidden rounded-2xl md:rounded-r-none md:border-r-0 bg-surface border transition-colors duration-200
