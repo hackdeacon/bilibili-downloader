@@ -171,13 +171,13 @@ export default function Home() {
                   font-bold text-ink-900 ${mounted ? 'transition-all duration-700 ease-silky' : ''}
                   ${videoInfo || loading ? 'text-lg' : 'text-3xl mb-3'}
                 `}>
-                  Bilibili Downloader
+                  Bilibili Demo
                 </h1>
                 <p className={`
                   text-ink-500 ${mounted ? 'transition-all duration-500 ease-in-out' : ''}
                   ${videoInfo || loading ? 'text-xs font-medium' : 'text-lg'}
                 `}>
-                  Simple and pure Bilibili video downloader
+                  Simple and pure Bilibili video tools
                 </p>
               </div>
             </div>
@@ -411,7 +411,7 @@ export default function Home() {
       <footer className="py-6 text-center">
         <p className="text-xs text-ink-300 font-medium space-x-2">
           <a
-            href="https://github.com/hackdeacon/bilibili-downloader"
+            href="https://github.com/hackdeacon/bilibili-demo"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary-500 transition-colors"

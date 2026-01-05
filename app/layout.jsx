@@ -1,12 +1,12 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Bilibili Downloader',
-  description: 'An elegant and modern Bilibili video downloader, supporting multiple qualities with a smooth user experience.',
-  keywords: 'Bilibili downloader, video download, Bilibili video',
+  title: 'Bilibili Demo',
+  description: 'Bilibili Demo',
+  keywords: 'Bilibili Demo',
   openGraph: {
-    title: 'Bilibili Downloader',
-    description: 'Elegant and modern Bilibili video downloader tool',
+    title: 'Bilibili Demo',
+    description: 'Bilibili Demo',
     type: 'website',
   },
 }
