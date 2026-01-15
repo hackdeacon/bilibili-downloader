@@ -7,32 +7,25 @@ module.exports = {
     extend: {
       screens: {
         'xs': '400px',
-        'sm': '640px',
-        'md': '768px',
-        'lg': '1024px',
-        'xl': '1280px',
       },
       colors: {
-        // Japanese Traditional Colors (Nippon Colors inspiration)
         primary: {
-          DEFAULT: '#FB7299', // Bilibili Pink
+          DEFAULT: '#FB7299',
           50: '#fff1f2',
           100: '#ffe4e6',
           200: '#fecdd3',
           300: '#fda4af',
           400: '#fb7185',
-          500: '#fb7299', // Official Pink
+          500: '#fb7299',
           600: '#e11d48',
           700: '#be123c',
           800: '#9f1239',
           900: '#881337',
         },
-        // Muji-like neutrals
         'off-white': 'rgb(var(--c-off-white) / <alpha-value>)',
         'surface': 'rgb(var(--c-surface) / <alpha-value>)',
         'ink': {
           900: 'rgb(var(--c-ink-900) / <alpha-value>)',
-          800: '#262626', // Keep static if unused or map if needed
           500: 'rgb(var(--c-ink-500) / <alpha-value>)',
           400: 'rgb(var(--c-ink-400) / <alpha-value>)',
           200: 'rgb(var(--c-ink-200) / <alpha-value>)',

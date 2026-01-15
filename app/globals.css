@@ -18,12 +18,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    text-autospace: ideograph-alpha;
-    /* 防止 iOS 输入框聚焦时页面放大 */
     font-size: 16px;
   }
 
-  /* iOS 输入框缩放修复 */
   input,
   textarea,
   select {
@@ -32,88 +29,28 @@
   }
 
   :root {
-    /* Light Mode */
     --c-off-white: 249 250 251;
-    /* #f9fafb */
     --c-surface: 255 255 255;
-    /* #ffffff */
-
     --c-ink-900: 23 23 23;
-    /* #171717 */
     --c-ink-500: 115 115 115;
-    /* #737373 */
     --c-ink-400: 163 163 163;
-    /* #a3a3a3 */
     --c-ink-200: 229 229 229;
-    /* #e5e5e5 */
     --c-ink-50: 250 250 250;
-    /* #fafafa */
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      /* Dark Mode */
       --c-off-white: 10 10 10;
-      /* #0a0a0a */
       --c-surface: 23 23 23;
-      /* #171717 */
-
       --c-ink-900: 250 250 250;
-      /* #fafafa */
       --c-ink-500: 163 163 163;
-      /* #a3a3a3 */
       --c-ink-400: 82 82 82;
-      /* #525252 */
       --c-ink-200: 64 64 64;
-      /* #404040 */
       --c-ink-50: 38 38 38;
-      /* #262626 */
     }
   }
 
   ::selection {
-    background-color: rgba(37, 99, 235, 0.2);
-  }
-}
-
-@layer utilities {
-  .animate-fadeIn {
-    animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .animate-slideUp {
-    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .backdrop-blur-xl {
-    backdrop-filter: blur(24px);
-  }
-
-  .backdrop-blur-sm {
-    backdrop-filter: blur(4px);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
+    background-color: rgba(251, 114, 153, 0.2);
   }
 }
